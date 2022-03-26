@@ -38,5 +38,9 @@ public class DepartmentController {
         return "Data Deleted Successfully!!!";
     }
 
+    @PutMapping("/departments/{id}")
+    public Department updateDepartment(@PathVariable("id") Long departmentID,@RequestBody Department department){
+        return departmentService.updateDepartment(departmentID,department);
+    }
 
 }
