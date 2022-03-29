@@ -1,5 +1,9 @@
 package com.sampleapp.SpringBootApp.tutorial.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Entity;
@@ -8,7 +12,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.*;
 
+// Introducing Lambok
 @Entity
+@Data
+// Data is equivalent to getters, setters , toString, hasCode, RequiredArgsConstructor
+// Or You can simply use @Getter if you want only getter. In our we need everything, so we will go ahead with @Data
+//We also want default constructor, so we will use @NoArgsConstructor as well
+@NoArgsConstructor
+@AllArgsConstructor
+// Parameterized Constructor with all arguments.
+@Builder
 public class Department {
 
     @Id
@@ -38,7 +51,7 @@ public class Department {
     private String departmentName;
     private String departmentAddress;
     private String departmentCode;
-
+/*
     public Department(Long departmentId, String departmentName, String departmentAddress, String departmentCode) {
         this.departmentId = departmentId;
         this.departmentName = departmentName;
@@ -90,4 +103,6 @@ public class Department {
                 ", departmentCode='" + departmentCode + '\'' +
                 '}';
     }
+*/
+
 }
