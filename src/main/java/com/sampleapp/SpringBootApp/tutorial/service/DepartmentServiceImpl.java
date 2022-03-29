@@ -57,4 +57,11 @@ public class DepartmentServiceImpl implements DepartmentService{
 
         return departmentRepository.save(departmentDB);
     }
+
+    @Override
+    public Department fetchdepartmentByName(String deptName) {
+//        This method is not present in JPA repository so we need to declare it in our repository interface.
+        return departmentRepository.findBydepartmentNameIgnoreCase(deptName);
+    }
+
 }
