@@ -1,5 +1,6 @@
 package com.sampleapp.SpringBootApp.tutorial.error;
 
+// Creating Custom Exception By inheriting Exception class and overridding all methods of exception class.
 public class DepartmentNotFoundException extends Exception{
     public DepartmentNotFoundException() {
         super();
