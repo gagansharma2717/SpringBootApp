@@ -1,14 +1,50 @@
+server:
+  port: '8082'
+
 spring:
-  datasource:
-    username: root
-    url: jdbc:mysql://localhost:3306/dcbapp
-    driverClassName: com.mysql.cj.jdbc.Driver
-    password: Gs123@8027
+  profiles:
+    active: prod
+---
+
+Welcome:
+  Message: Welcome to My First REST API DEV!!!
+spring:
+  profiles: dev
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: 'true'
-server:
-  port: '8082'
+    show-sql: true
+  datasource:
+    url: 'jdbc:mysql://localhost:3306/dcbapp-qa'
+    username: root
+    password: Gs123@8027
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+---
 Welcome:
-  Message: Welcome to My First REST API !!!
+  Message: Welcome to My First REST API UAT!!!
+spring:
+  profiles: uat
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: 'jdbc:mysql://localhost:3306/dcbapp-uat'
+    username: root
+    password: Gs123@8027
+    driverClassName: com.mysql.cj.jdbc.Driver
+---
+Welcome:
+  Message: Welcome to My First REST API PROD!!!
+spring:
+  profiles: prod
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: 'jdbc:mysql://localhost:3306/dcbapp-prod'
+    username: root
+    password: Gs123@8027
+    driverClassName: com.mysql.cj.jdbc.Driver
