@@ -3,7 +3,7 @@ server:
 
 spring:
   profiles:
-    active: prod
+    active: dev
 ---
 
 Welcome:
@@ -20,6 +20,12 @@ spring:
     password: Gs123@8027
     driverClassName: com.mysql.cj.jdbc.Driver
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "beans,env"
 ---
 Welcome:
   Message: Welcome to My First REST API UAT!!!
@@ -48,3 +54,5 @@ spring:
     username: root
     password: Gs123@8027
     driverClassName: com.mysql.cj.jdbc.Driver
+
+
