@@ -11,3 +11,9 @@ public class SpringBootAppApplication {
 	}
 
 }
+
+// Run Application with different profiles
+// Run mvn clean install
+// cd target and type dir
+// type java -jar SpringBootApp-1.0.0.jar --spring.profiles.active=prod
+
